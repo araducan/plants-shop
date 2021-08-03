@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.subcontainer {
+  height: 30px;
+  display: flex;
+  align-items: baseline;
+  margin-top: 60px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.link {
+  text-decoration: none;
+  color: rgb(58, 48, 48);
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+.icon {
+  margin: 0 15px;
+  cursor: pointer;
+}
+
+#cart {
+  font-size: 20px;
+}
+
+.search {
+  border: 1px solid rgb(58, 48, 48);
+  color: rgb(0, 83, 73);
+  border-radius: 10px;
+  background-color: rgb(245, 245, 245);
+  margin-right: 20px;
+}
+
+.input {
+  border: transparent;
+  background-color: transparent;
+  width: 150px;
+}
