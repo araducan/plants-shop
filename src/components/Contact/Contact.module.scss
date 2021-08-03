@@ -1,0 +1,14 @@
+@import "../../styling/mixins";
+
+.container {
+	@include pageContainer;
+}
+
+.subContainer {
+	@include pageSubContainer;
+}
+
+.title {
+	font-size: 70px;
+	font-weight: bold;
+}
