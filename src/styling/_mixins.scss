@@ -1,18 +1,18 @@
 @mixin pageContainer {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 @mixin pageSubContainer {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	width: 45%;
-	padding: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 45%;
+  padding: 10% 10% 0 10%;
 }
 
 @mixin pageTitle {
-	font-size: 70px;
-	font-weight: bold;
+  font-size: 70px;
+  font-weight: bold;
 }
