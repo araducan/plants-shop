@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import style from "./Header.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
+import { faShopify } from "@fortawesome/free-brands-svg-icons";
 import { faSistrix } from "@fortawesome/free-brands-svg-icons";
 
 const Header = () => {
@@ -35,7 +35,7 @@ const Header = () => {
         <FontAwesomeIcon
           className={style.icon}
           id={style.cart}
-          icon={faShoppingBasket}
+          icon={faShopify}
         ></FontAwesomeIcon>
       </div>
     </div>
