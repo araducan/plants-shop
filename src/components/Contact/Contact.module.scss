@@ -11,3 +11,34 @@
 .title {
 	@include pageTitle;
 }
+
+.text {
+	text-shadow: 0 0 3px lightgrey;
+}
+
+.footer {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20%;
+}
+
+.bottomContainer {
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	width: 30%;
+	height: 100px;
+	font-size: 10px;
+}
+
+.icon {
+	color: rgb(0, 83, 73);
+	font-size: 50px;
+	margin-right: 20px;
+}
+
+.subtitle {
+	font-weight: bold;
+	font-size: 18px;
+	margin-bottom: 5px;
+}
