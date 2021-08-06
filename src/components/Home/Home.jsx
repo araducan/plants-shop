@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import style from "./Home.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTint } from "@fortawesome/free-solid-svg-icons";
@@ -6,6 +7,12 @@ import { faTemperatureLow } from "@fortawesome/free-solid-svg-icons";
 import { faCut } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
+  const history = useHistory();
+
+  const routeChange = () => {
+    let path = `shop`;
+    history.push(path);
+  };
   return (
     <div className={style.container}>
       <div className={style.subContainer}>
@@ -17,7 +24,9 @@ const Home = () => {
           adipisicing elit. Unde ipsam aliquam, sit dolores totam quos!
         </p>
 
-        <button className={style.greenButton}>Discover &nbsp; &#x3e;</button>
+        <button onClick={routeChange} className={style.greenButton}>
+          Discover &nbsp; &#x3e;
+        </button>
 
         <div className={style.footer}>
           <div className={style.bottomContainer}>
