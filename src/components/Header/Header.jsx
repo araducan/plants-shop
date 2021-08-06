@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import style from "./Header.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,98 +6,115 @@ import { faShopify } from "@fortawesome/free-brands-svg-icons";
 import { faSistrix } from "@fortawesome/free-brands-svg-icons";
 
 const Header = () => {
-  const active = `${style.underlined}`;
-  const [id1, setId1] = useState("");
-  const [id2, setId2] = useState("");
-  const [id3, setId3] = useState("");
-  const [id4, setId4] = useState("");
+	const active = `${style.underlined}`;
+	const [id1, setId1] = useState("");
+	const [id2, setId2] = useState("");
+	const [id3, setId3] = useState("");
+	const [id4, setId4] = useState("");
 
-  const handleActive = () => {
-    if (window.location.pathname === "/") {
-      setId1(active);
-      setId2("");
-      setId3("");
-      setId4("");
-    } else if (window.location.pathname === "/shop") {
-      setId2(active);
-      setId1("");
-      setId3("");
-      setId4("");
-    } else if (window.location.pathname === "/contact") {
-      setId3(active);
-      setId1("");
-      setId2("");
-      setId4("");
-    } else if (window.location.pathname === "/about") {
-      setId4(active);
-      setId1("");
-      setId2("");
-      setId3("");
-    }
-  };
+	const handleActive = (path) => {
+		if (path === "/home" || path === "/") {
+			setId2("");
+			setId3("");
+			setId4("");
+			setId1(active);
+		} else if (path === "/shop") {
+			setId1("");
+			setId3("");
+			setId4("");
+			setId2(active);
+		} else if (path === "/contact") {
+			setId1("");
+			setId2("");
+			setId4(active);
+			setId3("");
+		} else if (path === "/about") {
+			setId1("");
+			setId2("");
+			setId3(active);
+			setId4("");
+		} else {
+			setId1("");
+			setId2("");
+			setId3("");
+			setId4("");
+		}
+	};
 
-  return (
-    <div className={style.container}>
-      <div className={`${style.subcontainer} ${style.logo}`}>plant.</div>
-      <div className={style.subcontainer}>
-        <Link
-          onClick={() => {
-            handleActive();
-          }}
-          id={id1}
-          className={style.link}
-          to="/"
-        >
-          Home
-        </Link>
-        <Link
-          onClick={() => {
-            handleActive();
-          }}
-          id={id2}
-          className={style.link}
-          to="/shop"
-        >
-          Shop
-        </Link>
-        <Link
-          onClick={() => {
-            handleActive();
-          }}
-          id={id3}
-          className={style.link}
-          to="/"
-        >
-          About
-        </Link>
-        <Link
-          onClick={() => {
-            handleActive();
-          }}
-          id={id4}
-          className={style.link}
-          to="/contact"
-        >
-          Contact
-        </Link>
-      </div>
-      <div className={style.subcontainer}>
-        <div className={style.search}>
-          <FontAwesomeIcon
-            className={style.icon}
-            icon={faSistrix}
-          ></FontAwesomeIcon>
-          <input className={style.input} type="text"></input>
-        </div>
+	useEffect(() => {
+		handleActive(window.location.pathname);
+	}, []);
 
-        <FontAwesomeIcon
-          className={style.icon}
-          id={style.cart}
-          icon={faShopify}
-        ></FontAwesomeIcon>
-      </div>
-    </div>
-  );
+	return (
+		<div className={style.container}>
+			<div className={`${style.subcontainer} ${style.logo}`}>plant.</div>
+			<div className={style.subcontainer}>
+				<Link
+					to="/home"
+					id={id1}
+					onClick={() => {
+						handleActive("/home");
+					}}
+					className={style.link}
+				>
+					Home
+				</Link>
+				<Link
+					to="/shop"
+					id={id2}
+					onClick={() => {
+						handleActive("/shop");
+					}}
+					className={style.link}
+				>
+					Shop
+				</Link>
+				<Link
+					to="/about"
+					id={id3}
+					onClick={() => {
+						handleActive("/about");
+					}}
+					className={style.link}
+				>
+					About
+				</Link>
+				<Link
+					to="/contact"
+					id={id4}
+					onClick={() => {
+						handleActive("/contact");
+					}}
+					className={style.link}
+				>
+					Contact
+				</Link>
+			</div>
+			<div className={style.subcontainer}>
+				<div className={style.search}>
+					<FontAwesomeIcon
+						className={style.icon}
+						icon={faSistrix}
+					></FontAwesomeIcon>
+					<input className={style.input} type="text"></input>
+				</div>
+
+				<Link
+					to="/shopping-cart"
+					onClick={() => {
+						handleActive("/shopping-cart");
+					}}
+					className={style.link}
+				>
+					<FontAwesomeIcon
+						className={style.icon}
+						id={style.cart}
+						icon={faShopify}
+					></FontAwesomeIcon>
+				</Link>
+			</div>
+		</div>
+	);
 };
 
 export default Header;
