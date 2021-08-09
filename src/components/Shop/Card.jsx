@@ -4,6 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 
 const Card = (props) => {
+  let plant = {
+    name: props.title,
+    price: props.price,
+  };
+
   return (
     <div className={style.cardContainer}>
       <div className={style.cardSubContainer}>
@@ -15,10 +20,12 @@ const Card = (props) => {
         <div className={style.plantName}>{props.title}</div>
         <div className={style.cart}>
           <FontAwesomeIcon
+            onClick={() => props.getPlant(JSON.stringify(plant))}
             className={style.cartIcon}
             icon={faCartPlus}
           ></FontAwesomeIcon>
-          <div className={style.plantPrice}>{props.price}</div>
+
+          <div className={style.plantPrice}>{props.price} &#x24;</div>
         </div>
       </div>
     </div>

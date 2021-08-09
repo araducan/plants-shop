@@ -1,0 +1,35 @@
+@import "../../styling/mixins";
+
+.container {
+  @include pageContainer;
+}
+
+.subContainer {
+  @include pageSubContainer;
+}
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  font-size: 25px;
+  border-bottom: 1px solid rgb(0, 83, 73);
+}
+
+.listItemPrice {
+  font-weight: bold;
+}
+
+.total {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.emptyList {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  color: rgb(0, 83, 73);
+}
