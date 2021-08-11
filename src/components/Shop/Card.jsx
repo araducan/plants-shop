@@ -6,6 +6,7 @@ import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 const Card = (props) => {
   let plant = {
     name: props.title,
+    quantity: 1,
     price: props.price,
   };
 
@@ -20,7 +21,9 @@ const Card = (props) => {
         <div className={style.plantName}>{props.title}</div>
         <div className={style.cart}>
           <FontAwesomeIcon
-            onClick={() => props.getPlant(JSON.stringify(plant))}
+            onClick={() => {
+              props.getPlant(plant);
+            }}
             className={style.cartIcon}
             icon={faCartPlus}
           ></FontAwesomeIcon>

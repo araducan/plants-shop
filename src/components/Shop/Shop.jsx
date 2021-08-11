@@ -1,13 +1,12 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Card from "./Card";
 import plant1 from "../../resources/plant4.png";
 import plant2 from "../../resources/plant2.png";
 import plant3 from "../../resources/plant3.png";
+import style from "./Shop.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
-
-import style from "./Shop.module.scss";
-import { Link } from "react-router-dom";
 
 const Shop = () => {
   const [itemsList, setItemsList] = useState(
@@ -17,9 +16,18 @@ const Shop = () => {
   );
 
   const handleClick = (plant) => {
-    const updatedList = [...itemsList, JSON.parse(plant)];
-    setItemsList(updatedList);
+    let itemExist = false;
+    itemsList.forEach((item) => {
+      if (item.name === plant.name) {
+        itemExist = true;
+      }
+    });
+    if (itemExist === false) {
+      const updatedList = [...itemsList, plant];
+      setItemsList(updatedList);
+    }
   };
+  console.log(itemsList);
 
   localStorage.setItem("items", JSON.stringify(itemsList));
 
