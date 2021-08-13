@@ -25,6 +25,14 @@ const Shop = () => {
     if (itemExist === false) {
       const updatedList = [...itemsList, plant];
       setItemsList(updatedList);
+    } else {
+      itemsList.forEach((item) => {
+        if (item.name === plant.name) {
+          item.quantity = item.quantity + 1;
+        }
+      });
+      const updatedList = [...itemsList];
+      setItemsList(updatedList);
     }
   };
   console.log(itemsList);
@@ -36,20 +44,20 @@ const Shop = () => {
       <div className={style.subContainer}>
         <Card
           plant={plant1}
-          title={"Areca palm"}
+          title={"Eucalyptus cinerea"}
           price={15.98}
           getPlant={handleClick}
         ></Card>
         <Card
           plant={plant2}
           title={"Aloe barbadensis"}
-          price={9.98}
+          price={19.99}
           getPlant={handleClick}
         ></Card>
         <Card
           plant={plant3}
-          title={"Monstera deliciosa"}
-          price={2.98}
+          title={"Maranta fascinator"}
+          price={12.99}
           getPlant={handleClick}
         ></Card>
       </div>
