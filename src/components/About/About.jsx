@@ -2,6 +2,7 @@ import React from "react";
 import style from "./About.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAddressCard } from "@fortawesome/free-regular-svg-icons";
+import eucalyptus from "../../resources/eucalyptus.jpg";
 
 const About = () => {
   return (
@@ -20,6 +21,28 @@ const About = () => {
             facere asperiores rerum ipsa. Lorem ipsum dolor sit amet consectetur
             adipisicing elit.
           </p>
+        </div>
+        <div className={style.footer}>
+          <img
+            className={style.aboutPhoto}
+            src={eucalyptus}
+            alt="eucalyptus leaf"
+          ></img>
+          <img
+            className={style.aboutPhoto}
+            src={eucalyptus}
+            alt="eucalyptus leaf"
+          ></img>
+          <img
+            className={style.aboutPhoto}
+            src={eucalyptus}
+            alt="eucalyptus leaf"
+          ></img>
+          <img
+            className={style.aboutPhoto}
+            src={eucalyptus}
+            alt="eucalyptus leaf"
+          ></img>
         </div>
       </div>
     </div>

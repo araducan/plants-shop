@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Card from "./Card";
 import plant1 from "../../resources/plant4.png";
@@ -6,15 +6,9 @@ import plant2 from "../../resources/plant2.png";
 import plant3 from "../../resources/plant3.png";
 import style from "./Shop.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
+import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 
-const Shop = () => {
-  const [itemsList, setItemsList] = useState(
-    localStorage.getItem("items")
-      ? JSON.parse(localStorage.getItem("items"))
-      : []
-  );
-
+const Shop = ({ itemsList, setItemsList }) => {
   const handleClick = (plant) => {
     let itemExist = false;
     itemsList.forEach((item) => {
@@ -35,7 +29,6 @@ const Shop = () => {
       setItemsList(updatedList);
     }
   };
-  console.log(itemsList);
 
   localStorage.setItem("items", JSON.stringify(itemsList));
 
@@ -65,7 +58,7 @@ const Shop = () => {
         <Link className={style.shopLink} to="/shopping-cart">
           <FontAwesomeIcon
             className={style.cartIcon}
-            icon={faCartPlus}
+            icon={faPaperPlane}
           ></FontAwesomeIcon>
           My shopping cart
         </Link>

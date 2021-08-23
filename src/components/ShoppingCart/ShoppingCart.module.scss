@@ -58,12 +58,48 @@
 }
 
 .icon {
+  color: rgb(0, 83, 73);
   font-size: 20px;
   padding: 0 20px;
   cursor: pointer;
 }
 
+.icon:hover {
+  font-size: 22px;
+  margin-top: 8px;
+  padding: 0 19px;
+}
+
 .proceed {
   display: flex;
   justify-content: center;
+}
+
+.delete {
+  font-size: 20px;
+  color: rgb(0, 83, 73);
+  margin-top: 10px;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.delete:hover {
+  font-size: 22px;
+  margin-top: 8px;
+  padding: 0 19px;
+}
+
+.modalContent {
+  font-size: 20px;
+  color: rgb(0, 83, 73);
+  display: flex;
+  justify-content: center;
+}
+
+.planeIcon {
+  color: rgb(0, 83, 73);
+  font-size: 20px;
+  padding: 0 20px;
+  cursor: pointer;
+  float: right;
 }

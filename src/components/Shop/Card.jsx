@@ -19,17 +19,20 @@ const Card = (props) => {
           alt="green plant"
         ></img>
         <div className={style.plantName}>{props.title}</div>
-        <div className={style.cart}>
+        <div className={style.plantPrice}>{props.price} &#x24;</div>
+
+        <button
+          className={style.cartButton}
+          onClick={() => {
+            props.getPlant(plant);
+          }}
+        >
           <FontAwesomeIcon
-            onClick={() => {
-              props.getPlant(plant);
-            }}
             className={style.cartIcon}
             icon={faCartPlus}
-          ></FontAwesomeIcon>
-
-          <div className={style.plantPrice}>{props.price} &#x24;</div>
-        </div>
+          ></FontAwesomeIcon>{" "}
+          Add to cart
+        </button>
       </div>
     </div>
   );
