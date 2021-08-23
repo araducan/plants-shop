@@ -1,23 +1,35 @@
 @import "../../styling/mixins";
 
 .container {
-	@include pageContainer;
+  @include pageContainer;
 }
 
 .subContainer {
-	@include pageSubContainer;
+  @include pageSubContainer;
 }
 
 .title {
-	@include pageTitle;
+  @include pageTitle;
 }
 
 .text {
-	text-shadow: 0 0 3px lightgrey;
+  text-shadow: 0 0 3px lightgrey;
+  margin: 0;
 }
 
 .subtitle {
-	font-weight: bold;
-	font-size: 18px;
-	margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.description {
+  display: flex;
+  margin: 20px 0;
+}
+
+.icon {
+  font-size: 60px;
+  margin: 10px 20px 10px 0;
+  color: rgb(0, 83, 73);
 }

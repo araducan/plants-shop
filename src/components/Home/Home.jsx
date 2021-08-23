@@ -1,9 +1,11 @@
 import React from "react";
 import style from "./Home.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTint } from "@fortawesome/free-solid-svg-icons";
-import { faTemperatureLow } from "@fortawesome/free-solid-svg-icons";
-import { faCut } from "@fortawesome/free-solid-svg-icons";
+import {
+  faTint,
+  faTemperatureLow,
+  faCut,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   return (
